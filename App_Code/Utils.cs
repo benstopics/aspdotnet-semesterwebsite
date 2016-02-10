@@ -5,12 +5,15 @@ using System.Web;
 using System.IO;
 using System.Net;
 
-namespace UtilsNamespace { 
-/// <summary>
-/// Summary description for Utils
-/// </summary>
-    public class Utils {
-        public Utils() {
+namespace UtilsNamespace
+{
+    /// <summary>
+    /// Summary description for Utils
+    /// </summary>
+    public class Utils
+    {
+        public Utils()
+        {
             //
             // TODO: Add constructor logic here
             //
@@ -19,22 +22,29 @@ namespace UtilsNamespace {
         /// Read the word list into a List data structure
         /// </summary>
         /// <returns>The List object containing all the words</returns>
-        public static List<String> ReadWordList() {
+        public static List<String> ReadWordList()
+        {
 
             List<String> wordList = new List<String>();
             StreamReader sr = null;
-            try {   // Open the text file using a stream reader.
+            try
+            {   // Open the text file using a stream reader.
                 String path = HttpContext.Current.Server.MapPath("~/Words/english.All.txt");
-                using (sr = new StreamReader(path)) {
+                using (sr = new StreamReader(path))
+                {
                     String word;
-                    while ((word = sr.ReadLine())!= null) {
+                    while ((word = sr.ReadLine()) != null)
+                    {
                         wordList.Add(word);
-//                      Console.WriteLine(word);
+                        //                      Console.WriteLine(word);
                     }
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 // What can we do here??            
-            } finally { try { sr.Close(); } catch (Exception ex) { } }
+            }
+            finally { try { sr.Close(); } catch (Exception ex) { } }
             return wordList;
         }
 
@@ -52,33 +62,37 @@ namespace UtilsNamespace {
             // Start web client
             WebClient client = new WebClient();
             client.Encoding = System.Text.Encoding.UTF8; // If encoding isn't set manually, dot character will be converted to "A" as placeholder
-            string downloadString = client.DownloadString("http://www.dictionary.com/browse/wardenship");
-            List<int> indexes = AllIndexesOf(downloadString, "data-syllable=\""); // Capture all instances of syllable data indexes
-            foreach (int index in indexes)
+            try
             {
-                string trim = downloadString.Substring(index + 15);
-
-                // Capture syllable data values
-                for (int i = 0; i < trim.Length; i++)
+                string downloadString = client.DownloadString("http://www.dictionary.com/browse/" + word);
+                List<int> indexes = AllIndexesOf(downloadString, "data-syllable=\""); // Capture all instances of syllable data indexes
+                foreach (int index in indexes)
                 {
-                    int search = acceptableChars.IndexOf(trim[i]);
-                    Console.Write(trim[i]);
-                    if (search == -1)
-                    { // If found non-word character
-                        trim = trim.Substring(0, i);
-                        Console.WriteLine();
+                    string trim = downloadString.Substring(index + 15);
+
+                    // Capture syllable data values
+                    for (int i = 0; i < trim.Length; i++)
+                    {
+                        int search = acceptableChars.IndexOf(trim[i]);
+                        Console.Write(trim[i]);
+                        if (search == -1)
+                        { // If found non-word character
+                            trim = trim.Substring(0, i);
+                            Console.WriteLine();
+                            break;
+                        }
+                    }
+
+                    Console.WriteLine(trim);
+
+                    if (String.Join("", trim.Split('·')) == word)
+                    {
+                        result = trim.Split('·').Length; // Count number of syllables
                         break;
                     }
                 }
-
-                Console.WriteLine(trim);
-
-                if (String.Join("", trim.Split('·')) == "wardenship")
-                {
-                    result = trim.Split('·').Length; // Count number of syllables
-                    break;
-                }
             }
+            catch (Exception e) { }
 
             return result;
         }
