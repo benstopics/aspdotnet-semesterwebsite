@@ -1,0 +1,32 @@
+﻿body {
+	background: #0A1905;
+    color: lightgreen;
+}
+
+.lightgreen {
+    color: lightgreen;
+}
+
+p, a {
+    text-decoration: none;
+	text-shadow: 0 0 5px green;
+	color: lightgreen;
+	font-size: 20px;
+	font-family: Courier New;
+}
+
+p::before { 
+	content: "$\00a0";
+}
+
+a::before, a::after {
+	content: "\00a0";
+}
+
+a:hover::before {
+	content: "[";
+}
+
+a:hover::after {
+	content: "]";
+}

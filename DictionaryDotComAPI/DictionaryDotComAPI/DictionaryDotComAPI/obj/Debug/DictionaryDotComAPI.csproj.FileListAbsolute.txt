@@ -1,0 +1,6 @@
+C:\Users\ben\Documents\SemesterWebsite\DictionaryDotComAPI\DictionaryDotComAPI\DictionaryDotComAPI\bin\Debug\DictionaryDotComAPI.exe.config
+C:\Users\ben\Documents\SemesterWebsite\DictionaryDotComAPI\DictionaryDotComAPI\DictionaryDotComAPI\bin\Debug\DictionaryDotComAPI.exe
+C:\Users\ben\Documents\SemesterWebsite\DictionaryDotComAPI\DictionaryDotComAPI\DictionaryDotComAPI\bin\Debug\DictionaryDotComAPI.pdb
+C:\Users\ben\Documents\SemesterWebsite\DictionaryDotComAPI\DictionaryDotComAPI\DictionaryDotComAPI\obj\Debug\DictionaryDotComAPI.csprojResolveAssemblyReference.cache
+C:\Users\ben\Documents\SemesterWebsite\DictionaryDotComAPI\DictionaryDotComAPI\DictionaryDotComAPI\obj\Debug\DictionaryDotComAPI.exe
+C:\Users\ben\Documents\SemesterWebsite\DictionaryDotComAPI\DictionaryDotComAPI\DictionaryDotComAPI\obj\Debug\DictionaryDotComAPI.pdb
