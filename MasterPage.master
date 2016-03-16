@@ -12,20 +12,22 @@ Description: Masterpage template. All other pages are mere slaves to this master
 <head runat="server">
     <title></title>
     <link href="assets/benstopics.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <img src="assets/asplogo.png" />
-        <p>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Default.aspx"><- Go Back</asp:HyperLink>
-        </p>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <img src="assets/asplogo.png" />
+            <p>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Default.aspx"><- Go Back</asp:HyperLink>
+            </p>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
 </body>
 </html>

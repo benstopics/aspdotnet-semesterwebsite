@@ -30,3 +30,15 @@ a:hover::before {
 a:hover::after {
 	content: "]";
 }
+
+/* Override console theme for autocomplete */
+.ui-menu .ui-menu-item a {
+    color: black;
+    text-shadow: 0 0 0px black;
+	font-size: 0.65em;
+	font-family: Arial;
+}
+
+.ui-menu .ui-menu-item a:hover::before, .ui-menu .ui-menu-item a:hover::after {
+	content: "";
+}
