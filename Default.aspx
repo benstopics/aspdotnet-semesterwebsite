@@ -21,6 +21,7 @@ Description: This is the main page of the website. From this page you can access
             <p><asp:HyperLink ID="hlAssignment02" runat="server" NavigateUrl="Assignment02.aspx">./Assignment02</asp:HyperLink></p>
             <p><asp:HyperLink ID="hlAssignment03" runat="server" NavigateUrl="Assignment03.aspx">./Assignment03</asp:HyperLink></p>
             <p><asp:HyperLink ID="hlAssignment04" runat="server" NavigateUrl="Assignment04.aspx">./Assignment04</asp:HyperLink></p>
+            <p><asp:HyperLink ID="hlAssignment06" runat="server" NavigateUrl="Assignment06.aspx">./Assignment06</asp:HyperLink></p>
         </div>
     </form>
 </body>
